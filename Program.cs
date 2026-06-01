@@ -1,48 +1,58 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     char op;
     double num1, num2;
 
-    cout << "=== Simple C++ Calculator ===\n\n";
+    cout << "=== Continuous C++ Calculator ===\n";
+    cout << "(Type 'q' at the operator prompt to exit the program)\n\n";
 
-    cout << "Enter an operator (+, -, *, /): ";
-    cin >> op;
 
-    cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
+    while (true) {
 
-    switch (op)
-    {
+
+        cout << "Enter an operator (+, -, *, /) or 'q' to quit: ";
+        cin >> op;
+
+
+        if (op == 'q' || op == 'Q') {
+            cout << "\nGoodbye!" << endl;
+            break; 
+        }
+
+
+        cout << "Enter two numbers: ";
+        cin >> num1 >> num2;
+
+
+        switch (op) {
         case '+':
-            cout << "\nResult: " << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+            cout << "Result: " << num1 << " + " << num2 << " = " << (num1 + num2) << "\n\n";
             break;
 
         case '-':
-            cout << "\nResult: " << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+            cout << "Result: " << num1 << " - " << num2 << " = " << (num1 - num2) << "\n\n";
             break;
 
         case '*':
-            cout << "\nResult: " << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
+            cout << "Result: " << num1 << " * " << num2 << " = " << (num1 * num2) << "\n\n";
             break;
 
         case '/':
-            if (num2 != 0)
-            {
-                cout << "\nResult: " << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
+            if (num2 != 0) {
+                cout << "Result: " << num1 << " / " << num2 << " = " << (num1 / num2) << "\n\n";
             }
-            else
-            {
-                cout << "\nError! Division by zero is not allowed." << endl;
+            else {
+                cout << "Error! Division by zero is not allowed.\n\n";
             }
             break;
 
         default:
-            cout << "\nError! Invalid operator." << endl;
+            cout << "Error! Invalid operator.\n\n";
             break;
+        }
     }
 
     return 0;
